@@ -7,6 +7,19 @@
 
 module.exports = {
 
+	subscribeComments: function(req, res){
+
+		if (!req.isSocket) {
+			return res.badRequest();
+		}
+		sails.sockets.join(req, 'commentRoom', function(err) {
+			if (err) {
+				return res.serverError(err);
+			}
+			return res.ok("Suscribed to comments!");
+		});
+	},
+
 	create: function(req, res){
 
 		if(typeof req.param('text') !== 'string' || req.param('text').length == 0){
@@ -23,6 +36,9 @@ module.exports = {
 		.meta({fetch: true})
 		.exec(function(err, record){
 			if(err) return res.serverError();
+
+			sails.sockets.broadcast('commentRoom', 'commentCreated', { data: record }, req);
+
 			return res.ok(record);
 
 		});

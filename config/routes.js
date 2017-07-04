@@ -50,6 +50,11 @@ module.exports.routes = {
     action: 'redirect'
   },
 
+  'GET /subscribeComments': {
+    controller: 'CommentController',
+    action: 'subscribeComments'
+  }
+
 
 
   /***************************************************************************

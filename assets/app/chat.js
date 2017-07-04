@@ -30,7 +30,13 @@ export default class Chat extends React.Component {
 		this.handleChange = this.handleChange.bind(this);
 		this.addMsg = this.addMsg.bind(this);
 
-		io.socket.on('comment', this.addMsg);
+		// Subscribe
+		io.socket.get("/subscribecomments", function(res){
+			console.log(res);
+		});
+
+		// Listen for events in the room
+		io.socket.on('commentCreated', this.addMsg);
 	}
 
 	addMsg(msg){
@@ -67,9 +73,7 @@ export default class Chat extends React.Component {
 		// value is inaccurate (overkill number)
 		const maxScrollTop = (scrollHeight - height) * 2;
 		chat.scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
-
 	}
-
 
 	componentDidUpdate(prevProps, prevState) {
 		if(prevState.msgs.length != this.state.msgs.length){
