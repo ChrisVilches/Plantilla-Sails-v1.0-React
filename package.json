@@ -39,17 +39,17 @@
     "sails-hook-grunt": "^2.0.0",
     "sails-hook-orm": "^2.0.0-16",
     "sails-hook-sockets": "^1.4.3",
+    "should": "^11.2.1",
+    "superagent": "^3.5.2",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
     "start": "NODE_ENV=production node app.js",
-    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
-    "lint": "node ./node_modules/eslint/bin/eslint . --max-warnings=0 && echo '✔  Your code looks good.'",
-    "custom-tests": "echo \"(No other custom tests yet.)\" && echo",
     "debug": "node debug app.js",
     "dev": "clear && sails lift --verbose",
-    "prod": "clear && sails lift --prod"
+    "prod": "clear && sails lift --prod",
+    "test": "node ./node_modules/mocha/bin/mocha test/bootstrap.test.js test/integration/**/*.test.js"
   },
   "main": "app.js",
   "repository": {
@@ -61,6 +61,7 @@
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "eslint": "3.5.0",
-    "eslint-plugin-react": "^7.1.0"
+    "eslint-plugin-react": "^7.1.0",
+    "mocha": "^3.4.2"
   }
 }

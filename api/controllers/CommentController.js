@@ -8,7 +8,6 @@
 module.exports = {
 
 	create: function(req, res){
-		console.log("creando");
 
 		if(typeof req.param('text') !== 'string' || req.param('text').length == 0){
 			return res.badRequest();
