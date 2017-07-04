@@ -11,7 +11,12 @@
 .chat-msgs-individual{
 
 	border: 0;
-	border-top: 1px solid #aaaaaa;	
+	border-top: 1px solid #aaaaaa;
 	padding-top: 10px;
 	border-style: dashed;
+}
+
+.chat-msgs-individual small{
+
+	color: #999999;
 }

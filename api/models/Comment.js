@@ -7,10 +7,18 @@
 
 module.exports = {
 
+  schema: true,
+
   attributes: {
 
-  	text: 'string'
+  	text: {
+      type: 'string',
+      required: true
+    },
+    ip: {
+      type: 'string',
+      required: true
+    }
 
   }
 };
-

@@ -94,7 +94,7 @@ export default class Chat extends React.Component {
 				</div>
 				<div  className="chat-msgs" ref="messageList">
 				{this.state.msgs.map(function(m){
-					return <p key={m.id} className="chat-msgs-individual">{m.text}</p>
+					return <div className="chat-msgs-individual" key={m.id}><small>{m.ip} | {new Date(m.createdAt).toString()}</small><p>{m.text}</p></div>
 				})}
 				</div>
 			</div>
