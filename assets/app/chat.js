@@ -45,6 +45,9 @@ export default class Chat extends React.Component {
 			msg = msg.data;
 		}
 
+		if(!msg.hasOwnProperty("id") || !msg.hasOwnProperty("text"))
+			return;
+
 		var new_array = this.state.msgs;
 		this.setState({ msgs: new_array.concat(msg) });
 
@@ -58,7 +61,12 @@ export default class Chat extends React.Component {
 
 	handleSubmit(e){
 		e.preventDefault();
-		io.socket.post('/comment', { text: this.state.new_msg }, this.addMsg);
+		var text = this.state.new_msg.trim();
+		if(text.length == 0){
+			console.log("Empty text");
+			return;
+		}
+		io.socket.post('/comment', { text }, this.addMsg);
 		this.setState({ new_msg: '' });
 	}
 

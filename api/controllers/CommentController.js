@@ -16,17 +16,22 @@ module.exports = {
 			if (err) {
 				return res.serverError(err);
 			}
-			return res.ok("Suscribed to comments!");
+			return res.ok("Subscribed to comments!");
 		});
 	},
 
 	create: function(req, res){
 
-		if(typeof req.param('text') !== 'string' || req.param('text').length == 0){
+		if(typeof req.param('text') !== 'string'){
 			return res.badRequest();
 		}
 
 		var text = req.param('text').trim();
+
+		if(text.length == 0){
+			return res.badRequest();
+		}
+
 		var ip = req.ip || '127.0.0.1';
 
 		Comment.create({
