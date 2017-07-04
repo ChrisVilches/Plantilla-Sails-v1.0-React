@@ -1,0 +1,21 @@
+{
+  "name": "sails-react-webpack-starter-kit",
+  "description": "a Sails application packed with React",
+  "main": "app.js",
+  "authors": [
+    "kaytrance"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/FeloVilches/Plantilla-Sails-React",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
