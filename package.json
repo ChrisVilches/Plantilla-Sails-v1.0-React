@@ -20,6 +20,7 @@
   "scripts": {
     "start": "NODE_ENV=production node app.js",
     "debug": "node debug app.js",
+    "gruntless": "node app.js --no-grunt",
     "dev": "clear && sails lift --verbose",
     "prod": "clear && sails lift --prod",
     "test": "node ./node_modules/mocha/bin/mocha test/bootstrap.test.js test/integration/**/*.test.js"
