@@ -1,17 +1,49 @@
 {
-  "name": "sails-react-webpack-starter-kit",
+  "name": "plantilla-sails-v1.0-react",
   "private": true,
   "version": "1.0.0",
-  "description": "a Sails application packed with React",
+  "description": "A Sails v1.0 application packed with React",
   "keywords": [],
   "dependencies": {
     "async": "^2.0.1",
+    "bower": "^1.8.0",
+    "ejs": "2.3.4",
+    "include-all": "~0.1.6",
+    "lodash": "^4.17.4",
+    "prop-types": "^15.5.8",
+    "rc": "1.0.1",
+    "sails": "^1.0.0-36",
+    "sails-hook-grunt": "^2.0.0",
+    "sails-hook-orm": "^2.0.0-16",
+    "sails-hook-sockets": "^1.4.3"
+  },
+  "scripts": {
+    "start": "NODE_ENV=production node app.js",
+    "debug": "node debug app.js",
+    "dev": "clear && sails lift --verbose",
+    "prod": "clear && sails lift --prod",
+    "test": "node ./node_modules/mocha/bin/mocha test/bootstrap.test.js test/integration/**/*.test.js"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:FeloVilches/Plantilla-Sails-v1.0-React.git"
+  },
+  "author": "kaytrance",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-react-jsx": "^6.8.0",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
-    "bower": "^1.8.0",
-    "ejs": "2.3.4",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "mocha": "^3.4.2",
+    "should": "^11.2.1",
+    "superagent": "^3.5.2",
     "grunt": "0.4.5",
     "grunt-babel": "^6.0.0",
     "grunt-contrib-clean": "0.6.0",
@@ -27,41 +59,7 @@
     "grunt-sass": "^1.2.1",
     "grunt-sync": "0.2.4",
     "grunt-webpack": "^1.0.11",
-    "include-all": "~0.1.6",
-    "lodash": "^4.17.4",
-    "prop-types": "^15.5.8",
-    "rc": "1.0.1",
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1",
-    "react-router": "^4.1.1",
-    "react-router-dom": "^4.1.1",
-    "sails": "^1.0.0-36",
-    "sails-hook-grunt": "^2.0.0",
-    "sails-hook-orm": "^2.0.0-16",
-    "sails-hook-sockets": "^1.4.3",
-    "should": "^11.2.1",
-    "superagent": "^3.5.2",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
-  },
-  "scripts": {
-    "start": "NODE_ENV=production node app.js",
-    "debug": "node debug app.js",
-    "dev": "clear && sails lift --verbose",
-    "prod": "clear && sails lift --prod",
-    "test": "node ./node_modules/mocha/bin/mocha test/bootstrap.test.js test/integration/**/*.test.js"
-  },
-  "main": "app.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/ubuntu/project.git"
-  },
-  "author": "kaytrance",
-  "license": "MIT",
-  "devDependencies": {
-    "babel-cli": "^6.10.1",
-    "eslint": "3.5.0",
-    "eslint-plugin-react": "^7.1.0",
-    "mocha": "^3.4.2"
   }
 }
